@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DatabaseConfig {
 
-    @Value("${spring.datasource.url}")
+    @Value("${HEROKU_POSTGRESQL_NAVY_URL}")
     private String dbUrl;
   
     @Bean
