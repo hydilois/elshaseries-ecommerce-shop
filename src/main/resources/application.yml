@@ -1,0 +1,33 @@
+
+spring:
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/luv2shop
+    username: root
+    password: elsha
+
+logging:
+  level:
+    org.springframework.orm.jpa: debug
+    org.hibernate.SQL: debug
+
+---
+spring:
+  profiles: test
+  jpa:
+    database: h2
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:addressBook
+    show-sql: true
